@@ -83,7 +83,13 @@ main {
   border: solid 1px magenta;
 }
 
+h2 {
+  @include h2-font;
+}
 
+p {
+  @include p-font;
+}
 
 
 .button {
@@ -92,6 +98,8 @@ main {
 
 h1 {
   color: $light-orange;
+  @include logo-font;
+  letter-spacing: 4px;
 }
 
 
