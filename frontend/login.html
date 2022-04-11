@@ -8,42 +8,42 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
-  <header>
+<body class="body">
+  <header class="header">
 
       <a href="start.html"  class="img-and-name">
       <div class="img-container">
         <img src="./images/bookduck.svg" alt="the bookduck" class="bookDuck">
       </div>
-    <h1>BookDucks</h1></a>
+    <h1 class="h1-bookducks">BookDucks</h1></a>
 
   <nav>
-    <a href="profile.html">My profile</a>
-    <a href="login.html">Sign in</a>
+    <a class="nav-link" href="profile.html">My profile</a>
+    <a class="nav-link" href="login.html">Sign in</a>
   </nav>
   </header>
-  <main>
+  <main class="main">
     <div class="forms">
     <div>
-      <h2>Sign in</h2>
+      <h2 class="h2-heading">Sign in</h2>
       <form id="loginForm">
-        <label for="name">Username</label>
-        <input type="name" id="name" required class="input-field" /><br>
-        <label for="userPassword">Password</label>
+        <label for="username">Username</label>
+        <input type="name" id="username" required class="input-field" /><br>
+        <label for="password">Password</label>
         <input type="password" id="password" required class="input-field" />
         <button class="button" id="loginBtn">Sign in</button>
         </form>
     </div>
     <div>
-      <h2>Register new user</h2>
+      <h2 class="h2-heading">Register new user</h2>
         <form id="createUser">
-          <label for="name">Username</label>
-          <input type="name" id="name" required class="input-field" /><br>
+          <label for="newUser">Username</label>
+          <input type="text" id="newUser" required class="input-field" /><br>
           <label for="userEmail">Email</label>
           <input type="email" id="userEmail" required class="input-field" /><br>
-          <label for="userPassword">Password</label>
-          <input type="password" id="userpass" required class="input-field" /><br>
-          <button class="button" id="createbtn">Create account</button>
+          <label for="userPass">Password</label>
+          <input type="password" id="userPass" required class="input-field" /><br>
+          <button class="button" id="createBtn">Create account</button>
           </form>
     </div>
   </div>

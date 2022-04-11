@@ -1,0 +1,14 @@
+//PROFILE
+.profileInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: solid 1px yellow;
+}
+
+.container {
+  width: 23rem;//det här behöver ev ändras till annan mätenhet
+  
+  border: solid 1px magenta;
+}

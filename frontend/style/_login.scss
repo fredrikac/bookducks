@@ -1,0 +1,11 @@
+//LOGIN/REGISTER
+.forms {
+  display: flex;
+  flex-direction: row;
+
+  div{
+    border: solid 1px green;
+    width: 100%;
+    height: 20rem;
+  }
+}

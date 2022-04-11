@@ -1,0 +1,19 @@
+  //startpage
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+//startpage
+.lists {
+  display: flex;
+  flex-direction: row;
+  ul {
+    width: 50%;
+    height: 20rem;
+    background-color: $medium-orange;
+  }
+}

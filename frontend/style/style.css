@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@300;400;500&display=swap");
-body {
+.body {
   margin: 0;
   padding: 0;
   background-color: #4b8ba6;
@@ -15,7 +15,8 @@ body {
           align-items: center;
 }
 
-header {
+.header {
+  padding-top: 1em;
   height: 7rem;
   width: 100%;
   background-color: #246686;
@@ -31,7 +32,34 @@ header {
           justify-content: space-between;
 }
 
-main {
+.header .nav-link {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #f8a891;
+  padding: 1em;
+}
+
+.header .img-and-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-decoration: none;
+}
+
+.header .img-and-name .bookDuck {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 5rem;
+  width: auto;
+  margin: 0rem 3rem;
+}
+
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,57 +77,24 @@ main {
   border: solid 1px red;
 }
 
-main .about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.h1-bookducks {
+  color: #f8a891;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 4px;
 }
 
-.img-and-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-item-align: center;
-      align-self: center;
-  text-decoration: none;
+.h2-heading {
+  font-family: 'Quicksand', sans-serif;
 }
 
-.img-and-name .bookDuck {
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: 5rem;
-  width: auto;
-  margin: 0rem 3rem;
+.p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.lists {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.lists ul {
-  width: 50%;
-  height: 20rem;
+.button {
   background-color: #e26a48;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1em;
 }
 
 .forms {
@@ -137,21 +132,35 @@ main .about {
   border: solid 1px magenta;
 }
 
-h2 {
-  font-family: 'Quicksand', sans-serif;
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-p {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.button {
+.lists ul {
+  width: 50%;
+  height: 20rem;
   background-color: #e26a48;
-}
-
-h1 {
-  color: #f8a891;
-  font-family: 'Fredoka One', cursive;
-  letter-spacing: 4px;
 }
 /*# sourceMappingURL=style.css.map */
