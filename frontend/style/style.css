@@ -30,10 +30,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-bottom: solid 10px #e26a48;
 }
 
 .header .nav-link {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
   color: #f8a891;
   padding: 1em;
 }
@@ -67,37 +69,51 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 60%;
-  border: solid 1px red;
 }
 
 .h1-bookducks {
-  color: #f8a891;
   font-family: 'Fredoka One', cursive;
+  color: #f8a891;
   letter-spacing: 4px;
 }
 
 .h2-heading {
   font-family: 'Quicksand', sans-serif;
+  color: #361910;
 }
 
 .p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
 }
 
 .button {
   background-color: #e26a48;
+  color: #0c2c43;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
   padding: 1em;
+  margin-top: 1em;
+  font-size: medium;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #361910;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(20, 43, 85, 0.5);
+          box-shadow: 0 2px 4px 0 rgba(20, 43, 85, 0.5);
 }
 
-.forms {
+.button:hover {
+  background-color: #e26a48;
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.forms-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,12 +121,44 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  max-width: inherit;
+  margin-top: 1em;
 }
 
-.forms div {
-  border: solid 1px green;
-  width: 100%;
+.forms-container .form-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15rem;
   height: 20rem;
+}
+
+.forms-container .form-wrap .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0em 1em;
+}
+
+.forms-container .form-wrap .form label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+}
+
+.forms-container .form-wrap .form input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
 }
 
 .profileInfo {
@@ -128,8 +176,50 @@
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 23rem;
   border: solid 1px magenta;
+}
+
+.container .form-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15rem;
+  height: 20rem;
+}
+
+.container .form-wrap .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .form-wrap .form label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+}
+
+.container .form-wrap .form input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
 }
 
 .about {

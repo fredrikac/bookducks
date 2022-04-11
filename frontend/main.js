@@ -85,3 +85,8 @@ createBtn.addEventListener('click', (e) => {
   e.preventDefault();
   register();
 });
+
+
+//PROFILE 
+//hämta info från inloggad user 
+//rendera ut på profil-sidan

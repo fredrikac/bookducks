@@ -8,7 +8,33 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
   width: 23rem;//det här behöver ev ändras till annan mätenhet
   
   border: solid 1px magenta;
+
+  
+    .form-wrap {
+      display: flex; 
+      flex-direction: column;
+  
+      width: 15rem;
+      height: 20rem;
+  
+      .form {
+      display: flex; 
+      flex-direction: column;
+
+      label {
+        @include p-font;
+      }
+  
+      input {
+       @include p-font;
+      }
+    }
+  }
 }

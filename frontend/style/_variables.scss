@@ -4,21 +4,24 @@
 //Fonts
 @mixin logo-font {
   font-family: 'Fredoka One', cursive;
+  color: $light-orange;
+  letter-spacing: 4px;
 }
 
 @mixin h2-font {
   font-family: 'Quicksand', sans-serif;
+  color: $dark-brown;
 }
 
 @mixin p-font {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: $dark-brown;
 }
 
 
 //Colors
 $light-blue: #4b8ba6;
 $light-blue-2: #499bb0;
-
 
 $medium-blue: #246686;
 
@@ -28,6 +31,6 @@ $light-orange: #f8a891;
 $medium-orange: #e26a48;
 $dark-orange: #cd5b37;
 
-$dark-brown: #5f2b1d;
+$dark-brown: #361910;
 
-//Fonts
+

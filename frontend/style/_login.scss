@@ -1,11 +1,30 @@
 //LOGIN/REGISTER
-.forms {
+.forms-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  max-width: inherit;
+  margin-top: 1em;
 
-  div{
-    border: solid 1px green;
-    width: 100%;
+  .form-wrap {
+    display: flex; 
+    flex-direction: column;
+
+    width: 15rem;
     height: 20rem;
+
+    .form {
+      display: flex; 
+      flex-direction: column;
+      margin: 0em 1em;
+
+      label {
+        @include p-font;
+      }
+
+      input {
+        @include p-font;
+      }
+    }
   }
 }
