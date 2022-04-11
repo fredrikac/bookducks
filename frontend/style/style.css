@@ -163,6 +163,7 @@
 
 .profileInfo {
   width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,6 +177,11 @@
 }
 
 .container {
+  width: 23rem;
+  border: solid 1px magenta;
+}
+
+.container .profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,11 +189,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 23rem;
-  border: solid 1px magenta;
+}
+
+.container .avatar {
+  width: 4em;
+  height: auto;
 }
 
 .container .form-wrap {

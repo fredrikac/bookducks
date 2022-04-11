@@ -1,22 +1,37 @@
 //PROFILE
+
+//Wrappar alla divar
 .profileInfo{
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   border: solid 1px yellow;
 }
 
+
+//DIVarna som innehåller My Profile, My books och Add books
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  //display: flex;
+  // flex-direction: row;
+  // justify-content: space-evenly;
+  .profile {
+    display: flex;
+    flex-direction: row;
+  }
+  .avatar {
+    width: 4em;
+    height: auto;
+  }
 
   width: 23rem;//det här behöver ev ändras till annan mätenhet
   
   border: solid 1px magenta;
 
-  
+
+    //Styling formulär Add books
     .form-wrap {
       display: flex; 
       flex-direction: column;
@@ -38,3 +53,8 @@
     }
   }
 }
+
+// #myProfile {
+//   display: flex;
+//   flex-direction: column;
+// }

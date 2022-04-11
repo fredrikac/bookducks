@@ -26,67 +26,42 @@ const audioList = document.querySelector('#audioList');
 
 
 
-//LOGIN 
-const loginBtn = document.querySelector('#loginBtn');
-const createBtn = document.querySelector('#createBtn');
-
-//När användaren loggat in vill jag att den ska dirigeras till startsidan
-//Sign in ska ändras till sign out?
-let login = async () => {
-  let username = document.querySelector("#username").value;
-  let password = document.querySelector("#password").value;
-  
-  let response = await axios.post("http://localhost:1337/api/auth/local", {
-    identifier: username,
-    password
-  })
-  .then(response => {
-    let token = response.data.jwt;
-    sessionStorage.setItem("token", token);
-    console.log('User logged in! got token: ', token)
-  })
-  .catch(error => {
-    console.log('An error occurred:', error.response);
-  });
-}
-
-loginBtn.addEventListener('click', (e)=> {
-  e.preventDefault();
-  login();
-});
-
-
-//REGISTER NEW USER
-
-//När ny user är skapad, så vill jag att den ska vara inloggad
-let register = async ()=>{
-  let newUser = document.querySelector("#newUser").value;
-  let newPassword = document.querySelector("#userPass").value;
-  let userEmail = document.querySelector('#userEmail').value;
-
-  let response = await axios.post("http://localhost:1337/api/auth/local/register", {
-      username: newUser,
-      password : newPassword,
-      email : userEmail
-  })
-  .then(response =>{
-    let token = response.data.jwt;
-    sessionStorage.setItem("token", token);
-  
-    console.log(`User registration successful!`)
-
-  })
-  .catch(error => {
-    console.log('Oh no! An error occurred:', error.response);
-  });
-}
-
-createBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  register();
-});
 
 
 //PROFILE 
-//hämta info från inloggad user 
-//rendera ut på profil-sidan
+//När user är inloggad: 
+//1. hämta info 
+//2. rendera ut på profil-sidan
+
+let profileDiv = document.querySelector('#myProfile');
+
+let getUserInfo = async (id) => {
+  let {data} = await axios.get(`http://localhost:1337/api/users/${id}`, {
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    }
+  });
+
+  console.log(data)
+  renderProfile(data);
+}
+getUserInfo(2);
+
+
+let getUserBooks = async (id)=> {
+  //hämta alla böcker
+  //Sortera ut alla vars userid matchar med id
+
+}
+
+let renderProfile = (userInfo) => {
+  console.log(userInfo)
+  profileDiv.innerHTML = `
+  <img src="./images/avatar.png" alt="duck" class="avatar">
+  <ul>
+   <li>Username: ${userInfo.username}</li>
+  <li>Email: ${userInfo.email}</li>
+  <li>UserID: ${userInfo.id}</li>
+  <li>Member since ${userInfo.createdAt.slice(0, 10)}</li>
+  </ul>`
+}
