@@ -11,9 +11,12 @@
 .lists {
   display: flex;
   flex-direction: row;
-  ul {
-    width: 50%;
-    height: 20rem;
-    background-color: $medium-orange;
+  justify-content: space-between;
+
+  .bookDiv {
+    border: solid 1px $light-orange;
+    width: 100%;
+    padding: 2em;
   }
+
 }

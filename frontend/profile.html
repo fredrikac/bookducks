@@ -16,14 +16,15 @@
       </div>
     <h1 class="h1-bookducks">BookDucks</h1></a>
   <nav>
-    <a class="nav-link" href="profile.html">My profile</a>
-    <a class="nav-link" href="login.html">Sign out</a>
+    <a class="nav-link hidden" id="profileLink" href="profile.html">My profile</a>
+    <a class="nav-link" href="start.html">Start</a>
+    <button id="signOutBtn" class="button">Sign out</button>
   </nav>
   </header>
   <main class="main">
 
-    <div class="profileInfo">
-
+    <div id="profileContainer" class="profileInfo">
+     
       <div class="container">
         <h2 class="h2-heading">My profile</h2>
         <div id="myProfile" class="profile"></div>
@@ -43,8 +44,8 @@
             <input type="text" id="title" required class="input-field" /><br>
             <label for="author">Author</label>
             <input type="text" id="author" required class="input-field" /><br>
-            <label for="select">Rating</label>
-            <input type="number" step="0.1" min="0" max="5"><br>
+            <label for="rating">Rating</label>
+            <input type="number" step="0.1" min="0" max="5" id="rating"><br>
             <label for="genre">Genre</label>
             <select name="" id="genre">
               <option value="" selected disabled>Choose a genre...</option>
@@ -55,9 +56,17 @@
               <option value="popscience">Popular science</option>
               <option value="scifi">Sci-fi</option>
             </select>
+            <fieldset>
+              <legend>Type: </legend>
+              <input type="radio" id="book" name="typeOf" value="books">
+              <label for="book">Book</label>
+              <input type="radio" id="audio" name="typeOf" value="audiobooks">
+              <label for="audio">Audio book</label>
+            </fieldset>
+
             <label for="upload">Upload cover image</label>
             <input type="file" id="upload" class="input-field" /><br>
-            <button class="button" id="addItem">Add book</button>
+            <button class="button" id="addBtn">Add book</button>
             </form>
       </div>
     </div>
@@ -66,5 +75,6 @@
   </main>
   <footer></footer>
   <script src="main.js"></script>
+
 </body>
 </html>

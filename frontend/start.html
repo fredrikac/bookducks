@@ -17,8 +17,9 @@
     <h1 class="h1-bookducks">BookDucks</h1>
   </div>
   <nav>
-    <a class="nav-link" href="profile.html">My profile</a>
-    <a class="nav-link" href="login.html">Sign in</a>
+    <a class="nav-link" id="profileLink" href="profile.html">My profile</a>
+    <a class="nav-link" id="loginLink" href="login.html">Sign in</a>
+    <button id="signOutBtn" class="button">Sign out</button>
   </nav>
   </header>
   <main class="main">
@@ -32,8 +33,12 @@
     </div>
 
     <div class="lists">
-    <ul id="bookList"></ul>
-    <ul id="audioList"></ul>
+    <div id="bookList">
+      <h2 class="h2-heading">Books</h2>
+    </div>
+    <div id="audioList">
+      <h2 class="h2-heading">Audiobooks</h2>
+    </div>
   </div>
   </main>
   <footer></footer>

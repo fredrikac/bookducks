@@ -2,6 +2,7 @@
 const loginBtn = document.querySelector('#loginBtn');
 const createBtn = document.querySelector('#createBtn');
 
+//Pusha in users id i sessionstorage tillsammans med token?!!!!! IDE
 //När användaren loggat in vill jag att den ska dirigeras till startsidan
 //Sign in ska ändras till sign out?
 let login = async () => {
@@ -14,8 +15,12 @@ let login = async () => {
   })
   .then(response => {
     let token = response.data.jwt;
+    let id = response.data.user.id;
     sessionStorage.setItem("token", token);
-    console.log('User logged in! got token: ', token)
+    sessionStorage.setItem('id', id)
+    console.log(`Currently logged in as user id: ${id}. Got token: ${token}`);
+
+    renderLoggedIn();
   })
   .catch(error => {
     console.log('An error occurred:', error.response);
@@ -25,7 +30,20 @@ let login = async () => {
 loginBtn.addEventListener('click', (e)=> {
   e.preventDefault();
   login();
+  console.log(loggedInAs)
 });
+
+//When user is logged in, redirect to start page
+//Show My Profile
+let renderLoggedIn = () => {
+  console.log('function renderloggedin runs')
+  //Redirect to Start page
+  //location.href = 'start.html';//funkar
+  
+  // //Also, change Sign in to Sign out 
+  // document.getElementById('loginLink').innerText = 'Sign out';
+
+}
 
 
 //REGISTER NEW USER
@@ -57,3 +75,4 @@ createBtn.addEventListener('click', (e) => {
   e.preventDefault();
   register();
 });
+

@@ -113,6 +113,10 @@
           box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.hidden {
+  display: none;
+}
+
 .forms-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,11 +256,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.lists ul {
-  width: 50%;
-  height: 20rem;
-  background-color: #e26a48;
+.lists .bookDiv {
+  border: solid 1px #f8a891;
+  width: 100%;
+  padding: 2em;
 }
 /*# sourceMappingURL=style.css.map */
