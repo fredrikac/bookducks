@@ -246,6 +246,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 2em;
 }
 
 .lists {
@@ -259,11 +260,38 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+  background-color: #f8a891;
+}
+
+.lists .h2-heading {
+  text-align: center;
+}
+
+.lists .bookContainer {
+  width: 50%;
+}
+
+.lists .audioContainer {
+  width: 50%;
 }
 
 .lists .bookDiv {
   border: solid 1px #f8a891;
-  width: 100%;
-  padding: 2em;
+  display: inline-block;
+  width: 75%;
+  height: 37em;
+  padding-left: 25%;
+  background-color: #e26a48;
+}
+
+.lists .bookDiv img {
+  width: 12em;
+  padding-top: 2em;
+}
+
+.lists .bookDiv p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
 }
 /*# sourceMappingURL=style.css.map */

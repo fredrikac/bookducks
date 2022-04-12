@@ -45,7 +45,6 @@ let renderLoggedIn = () => {
 
 }
 
-
 //REGISTER NEW USER
 
 //När ny user är skapad, så vill jag att den ska vara inloggad

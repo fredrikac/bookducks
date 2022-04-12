@@ -1,53 +1,4 @@
-//DOM-elements start page
-const bookList = document.querySelector('#bookList');
-const audioList = document.querySelector('#audioList');
-
-//Hämta alla användare & spara dem i en array?
-//stäm av userId-propertyn med användarna
-
-//GET books & audiobooks
-let getBooks = async()=>{
-  let {data} = await axios.get("http://localhost:1337/api/books?populate=*");
-  renderBooks(data);
-}
-//getBooks();
-
-let getAudiobooks = async()=>{
-  let {data} = await axios.get("http://localhost:1337/api/audiobooks?populate=*");
-  renderAudiobooks(data);
-}
-//getAudiobooks();
-
-let renderBooks = async (books) => {
-  books.data.forEach(book => {
-    bookList.innerHTML += `<div class="bookDiv"><img src="http://localhost:1337${book.attributes.cover.data.attributes.url}"> <p>Title: ${book.attributes.title}</p>
-    <p>Author: ${book.attributes.author} </p>
-    <p>Rating: ${book.attributes.rating} </p>
-    <p>Pages: ${book.attributes.pages}</p>
-    <p>Submitted by: Username</p>
-    <p>Email: useremail</p>
-    </div>`
-  })
-}
-
-let renderAudiobooks = async (audiobooks) => {
-  audiobooks.data.forEach(audiobook => {
-    audioList.innerHTML += `<div class="bookDiv"><img src="http://localhost:1337${audiobook.attributes.cover.data.attributes.url}"> <p>Title: ${audiobook.attributes.title}</p>
-    <p>Author: ${audiobook.attributes.author} </p>
-    <p>Rating: ${audiobook.attributes.rating} </p>
-    <p>Length: ${audiobook.attributes.length}</p>
-    <p>Submitted by: Username</p>
-    <p>Email: useremail</p></div>`
-  })
-}
-
-
-
-
-
-
 //PROFILE 
-
 let profileDiv = document.querySelector('#myProfile');
 let currentUserID = sessionStorage.getItem('id');
 
@@ -59,7 +10,7 @@ let getUserInfo = async (id) => {
   });
   renderProfile(data);
 }
-getUserInfo(currentUserID);
+//getUserInfo(currentUserID);
 
 
 let getUserBooks = async (id)=> {
@@ -96,12 +47,14 @@ let addBook = async ()=> {
   let rating = document.querySelector('#rating').value;
 
   //kolla värdet från radio buttons 
-  
- let radios = document.querySelectorAll('input[type=radio][name="typeOf"]');
-   radios.forEach(radio => radio.addEventListener('change', () => {
-   let type = radio.value;
-   return type;
- }));
+  let radios = document.querySelectorAll('input[type=radio][name="typeOf"]');
+  radios.forEach(radio => radio.addEventListener('change', () => {
+    let type = radio.value;
+    return type;
+  }));
+
+  //Kolla vilka genres som är valda - byt till checkboxes? går det att välja flera alternativ ur dropdowns?
+
 
   //hämta image från filuppladdning
   let cover = document.querySelector('#upload').files;
@@ -120,7 +73,7 @@ let addBook = async ()=> {
         title, 
         author, 
         rating, 
-        //favorite_candies: [favorite_candies], // det måste vara en array med id:s på relationer
+        //genres: [genres], // det måste vara en array med id:s på relationer
         cover: response.data[0].id
       }
     },{
@@ -140,4 +93,4 @@ document.querySelector('#addBtn').addEventListener('click', (e)=>{
 
 
 
-  
+

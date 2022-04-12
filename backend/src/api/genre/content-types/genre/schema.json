@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "genres",
   "info": {
     "singularName": "genre",
@@ -11,8 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "genreName": {
+    "genre": {
       "type": "string"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book.book",
+      "inversedBy": "genres"
+    },
+    "audiobooks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::audiobook.audiobook",
+      "inversedBy": "genres"
     }
   }
 }
