@@ -1,5 +1,8 @@
 //PROFILE 
 let profileDiv = document.querySelector('#myProfile');
+let myBooks = document.querySelector('#myBooks');
+let myAudiobooks = document.querySelector('#myAudio');
+
 let currentUserID = sessionStorage.getItem('id');
 
 
@@ -17,7 +20,7 @@ let toggleMyprofile = ()=>{
 toggleMyprofile();
 
 
-
+//Get userinfo 
 let getUserInfo = async (id) => {
   let {data} = await axios.get(`http://localhost:1337/api/users/${id}`, {
     headers: {
@@ -29,24 +32,7 @@ let getUserInfo = async (id) => {
 getUserInfo(currentUserID);
 
 
-let getUserBooks = async (id)=> {
-  //hämta alla böcker
-  //Sortera ut alla vars userid matchar med id
-  let {data} = await axios.get("http://localhost:1337/api/books?populate=*");
-
-  data.data.forEach(obj => {
-    //console.log(obj.attributes.userId)//bokens userID
-    //om bokens userId matchar id (som är currentUserID)... 
-
-    if(obj.attributes.userId === id){
-      console.log('match')
-    }
-  })
-
-  console.log('userBooks: ', data.data)
-}
-getUserBooks(currentUserID);
-
+//Render userinfo to the UI
 let renderProfile = (userInfo) => {
   profileDiv.innerHTML = `
   <img src="./images/avatar.png" alt="duck" class="avatar">
@@ -58,11 +44,82 @@ let renderProfile = (userInfo) => {
   </ul>`
 }
 
+//Get users books 
+let getUserBooks = async (id) => {
+  let {data} = await axios.get("http://localhost:1337/api/books?populate=*");
+  renderMyBooks(data);
+}
+getUserBooks(currentUserID);
+
+//Get users audiobooks
+let getUsersAudiobooks = async (id) => {
+  let {data} = await axios.get("http://localhost:1337/api/audiobooks?populate=*");
+  renderMyAudiobooks(data);
+}
+getUsersAudiobooks(currentUserID);
+
+//Render books
+let renderMyBooks = (userBooks) => {
+  userBooks.data.forEach(book => {
+
+    let { title, author, pages, rating, user, genres, cover } = book.attributes;
+
+    //det går ej att göra en hård jämförelse --- string & number?  
+    let bookId = user.data.id;//den här behövs egentligen inte, men får vara där pga läsbarhet
+
+    if(bookId == currentUserID){
+      console.log('Same id: ', bookId, title, currentUserID)
+
+      let div = document.createElement('div');
+
+      genres.data.forEach(genre => {
+        div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+      });
+
+      myBooks.innerHTML += `<div id="aBook" class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      ${div.innerHTML}
+      <p>Title: ${title}</p>
+      <p>Author: ${author}</p>
+      <p>Rating: ${rating}</p>
+      <p>Pages: ${pages}</p>  
+      </div>`
+    }
+  })
+}
+
+//Render audiobooks
+let renderMyAudiobooks = (userBooks) => {
+  userBooks.data.forEach(book => {
+
+    let { title, author, length, rating, user, genres, cover } = book.attributes;
+
+    //det går ej att göra en hård jämförelse --- string & number?  
+    let bookId = user.data.id;//den här behövs egentligen inte, men får vara där pga läsbarhet
+
+    if(bookId == currentUserID){
+      console.log('Same id: ', bookId, title, currentUserID)
+
+      let div = document.createElement('div');
+
+      genres.data.forEach(genre => {
+        div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+      });
+
+      myAudiobooks.innerHTML += `<div id="aBook" class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      ${div.innerHTML}
+      <p>Title: ${title}</p>
+      <p>Author: ${author}</p>
+      <p>Rating: ${rating}</p>
+      <p>Length: ${length}</p>  
+      </div>`
+    }
+  })
+}
 
 
-
-//UPLOAD NEW BOOKS - detta borde funka, men det gör det inte. 403 Forbidden. Fel på datan som skickas probably
-//Dela upp detta i flera funktioner för att få till length och pages?
+//UPLOAD NEW BOOKS - IN PROGRESS - GÖR KLART OM TID & ORK FINNS
+//1.Börja med att få till alla inputfält 
+//2.Överväg att dela upp den i två funktioner istället, en för books och en för audio
 
 let addBook = async ()=> {
   let title = document.querySelector('#title').value;

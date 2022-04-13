@@ -32,9 +32,6 @@
         "images"
       ]
     },
-    "userId": {
-      "type": "integer"
-    },
     "genres": {
       "type": "relation",
       "relation": "manyToMany",
