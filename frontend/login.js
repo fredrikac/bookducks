@@ -2,6 +2,8 @@
 const loginBtn = document.querySelector('#loginBtn');
 const createBtn = document.querySelector('#createBtn');
 
+//queryparams för att hålla reda på vilken url man är på 
+
 //Pusha in users id i sessionstorage tillsammans med token?!!!!! IDE
 //När användaren loggat in vill jag att den ska dirigeras till startsidan
 //Sign in ska ändras till sign out?
@@ -19,8 +21,8 @@ let login = async () => {
     sessionStorage.setItem("token", token);
     sessionStorage.setItem('id', id)
     console.log(`Currently logged in as user id: ${id}. Got token: ${token}`);
-
-    renderLoggedIn();
+    location.href = 'start.html';
+  
   })
   .catch(error => {
     console.log('An error occurred:', error.response);
@@ -33,20 +35,8 @@ loginBtn.addEventListener('click', (e)=> {
   console.log(loggedInAs)
 });
 
-//When user is logged in, redirect to start page
-//Show My Profile
-let renderLoggedIn = () => {
-  console.log('function renderloggedin runs')
-  //Redirect to Start page
-  //location.href = 'start.html';//funkar
-  
-  // //Also, change Sign in to Sign out 
-  // document.getElementById('loginLink').innerText = 'Sign out';
-
-}
 
 //REGISTER NEW USER
-
 //När ny user är skapad, så vill jag att den ska vara inloggad
 let register = async ()=>{
   let newUser = document.querySelector("#newUser").value;
@@ -61,9 +51,11 @@ let register = async ()=>{
   .then(response =>{
     let token = response.data.jwt;
     sessionStorage.setItem("token", token);
-  
-    console.log(`User registration successful!`)
-
+    let id = response.data.user.id;
+    console.log(`User registration successful!`);
+    sessionStorage.setItem('id', id);
+    console.log(`Currently logged in as user id: ${id}. Got token: ${token}`);
+    location.href = 'profile.html';
   })
   .catch(error => {
     console.log('Oh no! An error occurred:', error.response);

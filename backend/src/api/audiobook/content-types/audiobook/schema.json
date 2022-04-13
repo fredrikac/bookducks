@@ -43,6 +43,11 @@
       "relation": "manyToMany",
       "target": "api::genre.genre",
       "inversedBy": "audiobooks"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
