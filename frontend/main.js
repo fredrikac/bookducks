@@ -10,10 +10,12 @@ document.querySelector('#signOutBtn').addEventListener('click', (e) => {
 //Change visibility on nav-links if user is or is not logged in
 let toggleSignIn = () => {
   if(sessionStorage.getItem('token')){
-  document.getElementById('loginLink').classList.add('hidden');
+    document.getElementById('loginLink').classList.add('hidden');
+    document.getElementById('becomeBtn').classList.add('hidden');
   }else{
     document.getElementById('profileLink').classList.add('hidden');
     document.getElementById('signOutBtn').classList.add('hidden');
   }
 }
 toggleSignIn();
+

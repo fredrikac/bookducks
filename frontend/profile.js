@@ -7,7 +7,7 @@ let currentUserID = sessionStorage.getItem('id');
 
 
 // //Check if logged in - if not, hide profile side
-let toggleMyprofile = ()=>{
+let toggleMyprofile = () => {
   if(!sessionStorage.getItem('token')){
     console.log('you are not logged in')
     document.getElementById('profileContainer').classList.add('hidden');
@@ -44,19 +44,30 @@ let renderProfile = (userInfo) => {
   </ul>`
 }
 
+
 //Get users books 
 let getUserBooks = async (id) => {
-  let {data} = await axios.get("http://localhost:1337/api/books?populate=*");
+  let {data} = await axios.get("http://localhost:1337/api/books?populate=*", {
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    }
+  });
   renderMyBooks(data);
 }
 getUserBooks(currentUserID);
 
+
 //Get users audiobooks
 let getUsersAudiobooks = async (id) => {
-  let {data} = await axios.get("http://localhost:1337/api/audiobooks?populate=*");
+  let {data} = await axios.get("http://localhost:1337/api/audiobooks?populate=*", {
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    }
+  });
   renderMyAudiobooks(data);
 }
 getUsersAudiobooks(currentUserID);
+
 
 //Render books
 let renderMyBooks = (userBooks) => {
@@ -64,12 +75,9 @@ let renderMyBooks = (userBooks) => {
 
     let { title, author, pages, rating, user, genres, cover } = book.attributes;
 
-    //det går ej att göra en hård jämförelse --- string & number?  
-    let bookId = user.data.id;//den här behövs egentligen inte, men får vara där pga läsbarhet
+    let bookId = user.data.id;
 
     if(bookId == currentUserID){
-      console.log('Same id: ', bookId, title, currentUserID)
-
       let div = document.createElement('div');
 
       genres.data.forEach(genre => {
@@ -87,18 +95,16 @@ let renderMyBooks = (userBooks) => {
   })
 }
 
+
 //Render audiobooks
 let renderMyAudiobooks = (userBooks) => {
   userBooks.data.forEach(book => {
 
     let { title, author, length, rating, user, genres, cover } = book.attributes;
 
-    //det går ej att göra en hård jämförelse --- string & number?  
-    let bookId = user.data.id;//den här behövs egentligen inte, men får vara där pga läsbarhet
+    let bookId = user.data.id;
 
     if(bookId == currentUserID){
-      console.log('Same id: ', bookId, title, currentUserID)
-
       let div = document.createElement('div');
 
       genres.data.forEach(genre => {
@@ -117,63 +123,98 @@ let renderMyAudiobooks = (userBooks) => {
 }
 
 
-//UPLOAD NEW BOOKS - IN PROGRESS - GÖR KLART OM TID & ORK FINNS
-//1.Börja med att få till alla inputfält 
-//2.Överväg att dela upp den i två funktioner istället, en för books och en för audio
-
-let addBook = async ()=> {
+//UPLOAD NEW BOOKS
+//Upload BOOK
+let addBook = async () => {
   let title = document.querySelector('#title').value;
   let author = document.querySelector('#author').value;
   let rating = document.querySelector('#rating').value;
   let pages = document.querySelector('#pages').value;
-  let length = document.querySelector('#length').value;
-  let type;
+  let genres = document.querySelector('#selectGenre').value;
 
-  //kolla värdet från radio buttons 
-  let radios = document.querySelectorAll('input[type=radio][name="typeOf"]');
-  radios.forEach(radio => radio.addEventListener('change', () => {
-    type = radio.value;
-    return type;
-  }));
-
-  //Kolla vilka genres som är valda - byt till checkboxes? går det att välja flera alternativ ur dropdowns?
-
-
-  //hämta image från filuppladdning
   let cover = document.querySelector('#upload').files;
-
-  //vi måste skapa formdata för att det ska funka
   let imgData = new FormData();
-  
-  //appenda själva bilden till formdataobjektet. key+value
   imgData.append('files', cover[0]);
 
-  //ladda upp bilden
-  await axios.post('http://localhost:1337/api/upload/', imgData).then(response => {
+  await axios.post('http://localhost:1337/api/upload/', imgData, {
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    }
+  }).then(response => {
 
-    axios.post(`http://localhost:1337/api/${type}`, {
+    axios.post(`http://localhost:1337/api/books`, {
       data: {
-        title, 
-        author, 
-        rating, 
-        //genres: [genres], // det måste vara en array med id:s på relationer
+        title,
+        author,
+        rating,
+        pages,
+        genres: [genres], 
+        user: [currentUserID],
         cover: response.data[0].id
       }
     },{
       headers: {
-        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`
       }
-  })
+    })
+
   }).catch(error => {
     console.log('Oh no! An error occurred:', error.response);
   })
 }
 
-document.querySelector('#addBtn').addEventListener('click', (e)=>{
+
+//Upload AUDIO
+let addAudiobook = async () => {
+  let audioTitle = document.querySelector('#audioTitle').value;
+  let audioAuthor = document.querySelector('#audioAuthor').value;
+  let audioRating = document.querySelector('#audioRating').value;
+  let length = document.querySelector('#length').value;
+  let audioGenres = document.querySelector('#selectAudioGenre').value;
+
+  let audioCover = document.querySelector('#audioUpload').files;
+
+  let imgData = new FormData();
+  
+  imgData.append('files', audioCover[0]);
+
+  await axios.post('http://localhost:1337/api/upload/', imgData, {
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    }
+  }).then(response => {
+
+    axios.post(`http://localhost:1337/api/audiobooks`, {
+      data: {
+        title : audioTitle,
+        author : audioAuthor,
+        rating : audioRating,
+        length,
+        genres: [audioGenres], 
+        user: [currentUserID],
+        cover: response.data[0].id
+      }
+    },{
+      headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`
+      }
+    })
+
+  }).catch(error => {
+    console.log('Oh no! An error occurred:', error.response);
+  })
+}
+
+
+document.querySelector('#addBookBtn').addEventListener('click', (e)=>{
   e.preventDefault();
   addBook();
 })
 
+document.querySelector('#addAudioBtn').addEventListener('click', (e)=>{
+  e.preventDefault();
+  addAudiobook();
+})
 
 
 

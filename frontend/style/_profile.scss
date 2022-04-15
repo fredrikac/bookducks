@@ -11,6 +11,8 @@
 }
 
 
+
+
 //DIVarna som innehåller My Profile, My books och Add books
 .container {
   //display: flex;
@@ -30,13 +32,14 @@
   border: solid 1px magenta;
 
 
+
     //Styling formulär Add books
     .form-wrap {
       display: flex; 
       flex-direction: column;
   
       width: 15rem;
-      height: 20rem;
+      height: 35rem;
   
       .form {
       display: flex; 
@@ -53,7 +56,3 @@
   }
 }
 
-// #myProfile {
-//   display: flex;
-//   flex-direction: column;
-// }

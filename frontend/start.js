@@ -12,7 +12,6 @@ getBooks();
 let getAudiobooks = async() => {
   let {data} = await axios.get("http://localhost:1337/api/audiobooks?populate=*");
   renderAudiobooks(data);
-  console.log('audiobook test:', data)
 }
 getAudiobooks();
 
