@@ -30,14 +30,14 @@ let renderBooks = async (books) => {
       div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
     });
 
-    bookList.innerHTML += `<div id="aBook" class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
-      ${div.innerHTML}
-    <p>Title: ${title}</p>
-    <p>Author: ${author}</p>
-    <p>Rating: ${rating}</p>
-    <p>Pages: ${pages}</p>
-    <p>Submitted by: ${username}</p>
-    <p>Email: ${email}</p>
+    bookList.innerHTML += `<div class="bookDiv book"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      ${div.innerHTML}<br>
+    <p class="p">Title: ${title}</p>
+    <p class="p">Author: ${author}</p>
+    <p class="p">Rating: ${rating}</p>
+    <p class="p">Pages: ${pages}</p>
+    <p class="p">Submitted by: ${username}</p>
+    <p class="p">Email: ${email}</p>
     </div>`
   })
 }
@@ -56,13 +56,13 @@ let renderAudiobooks = async (audiobooks) => {
       div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
     })
 
-    audioList.innerHTML += `<div class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
-    ${div.innerHTML}
-    <p>Title: ${title}</p>
-    <p>Author: ${author}</p>
-    <p>Rating: ${rating}</p>
-    <p>Length: ${length}</p>
-    <p>Submitted by: ${username}</p>
-    <p>Email: ${email}</p></div>`
+    audioList.innerHTML += `<div class="bookDiv audio"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+    ${div.innerHTML}<br>
+    <p class="p">Title: ${title}</p>
+    <p class="p">Author: ${author}</p>
+    <p class="p">Rating: ${rating}</p>
+    <p class="p">Length: ${length}</p>
+    <p class="p">Submitted by: ${username}</p>
+    <p class="p">Email: ${email}</p></div>`
   })
 }

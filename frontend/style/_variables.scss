@@ -18,8 +18,13 @@
   color: $dark-brown;
 }
 
+@mixin header-gradient {
+  background: rgb(36,102,134);
+  background: linear-gradient(145deg, rgba(36,102,134,1) 0%, rgba(12,44,67,0.4770950616574755) 100%);
+}
 
 //Colors
+$lighter-blue: #6ba4bc;
 $light-blue: #4b8ba6;
 $light-blue-2: #499bb0;
 

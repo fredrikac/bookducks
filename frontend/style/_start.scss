@@ -1,12 +1,19 @@
   //startpage
-  .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2em;
-  }
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0em;
+  padding: 1em 3em;
+  background: $lighter-blue;
+  border-radius: 5px;
+}
 
+.how-it-works {
+  border-top: solid 5px hsla(198, 71%, 74%, 0.637);
+  border-bottom: solid 5px hsla(198, 71%, 74%, 0.637);
+}
   
 //startpage
 .lists {
@@ -14,7 +21,9 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  background-color: $light-orange;
+  border-radius: 5px;
+  background: $lighter-blue;
+
 
   .h2-heading {
     text-align: center;
@@ -22,30 +31,51 @@
 
   .bookContainer {
     width: 50%;
+    border-right: solid 2px $light-blue;
+    border-radius: 5px;
+    
   }
 
   .audioContainer {
     width: 50%;
+    border-left: solid 2px $light-blue;
+    border-radius: 5px;
   }
 
-  
+  //bookdivsen är inte helt centrerade.... 
 
   .bookDiv {
-    border: solid 1px $light-orange;
-    display: inline-block;
-    width: 75%;
-    height: 40em;
-    padding-left: 25%;//centrerar
-    background-color: $medium-orange;
+    display: flex;
+    flex-direction: column;
+
+    width: inherit;
+    height: auto;
+
+    padding: 2em 3em;
+    border-radius: 5px;
+    border: solid 2px $dark-blue;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  
+    line-height: 0.4;
  
     img {
-      width: 12em;
-      padding-top: 2em;
+      height: 18em;
+      width: auto;
     }
 
-    p {
+    .genreP {
       @include p-font;
+      font-size: small;
     }
   }
 
+  .bookDiv.audio {
+    background-color:  rgba(12, 44, 67, 0.196)
+  }
+
+  .bookDiv.book {
+    background-color:  hsla(198, 71%, 74%, 0.237);
+  }
 }

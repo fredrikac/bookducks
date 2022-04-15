@@ -8,10 +8,11 @@
 }
 
 .header {
+  @include header-gradient;
+
   padding-top: 1em;
   height: 7rem;
   width:100%;
-  background-color: $medium-blue;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -43,6 +44,7 @@
   flex-direction: column;
   justify-content: center;
   width: 60%;
+ 
 }
 
 .h1-bookducks {
@@ -68,16 +70,20 @@
 
   outline: none;
   cursor: pointer;
-  border: 1px solid $dark-brown;
+  border: 3px solid $light-orange;
   border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(20, 43, 85, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(219, 161, 75, 0.5);
 
 }
 
-.button:hover {
+.button.sign-out {
+  padding: 0.3em;
+  margin-right: 1em;
+}
 
-  background-color: $medium-orange;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+.button:hover {
+  background-color: $light-orange;
+  box-shadow: 0 12px 16px 0 rgba(243, 171, 99, 0.24), 0 17px 50px 0 rgba(235, 164, 78, 0.19);
 }
 
 .hidden {
