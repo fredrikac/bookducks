@@ -311,7 +311,6 @@
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  line-height: 0.4;
 }
 
 .lists .bookDiv img {
@@ -323,6 +322,12 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #361910;
   font-size: small;
+  line-height: 0.5;
+}
+
+.lists .bookDiv .p {
+  margin: 0.3em;
+  padding: 0;
 }
 
 .lists .bookDiv.audio {
