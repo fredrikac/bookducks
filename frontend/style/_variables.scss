@@ -18,6 +18,7 @@
   color: $dark-brown;
 }
 
+//Colors
 @mixin header-gradient {
   background: rgb(36,102,134);
   background: linear-gradient(145deg, rgba(36,102,134,1) 0%, rgba(12,44,67,0.4770950616574755) 100%);
@@ -38,4 +39,40 @@ $dark-orange: #cd5b37;
 
 $dark-brown: #361910;
 
+//Common styling
+@mixin bookdiv-style {
+  //display: flex;
+  //flex-direction: column;
 
+  width: inherit;
+  height: auto;
+
+  padding: 2em 3em;
+  border-radius: 5px;
+  border: solid 2px $dark-blue;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  .genreP {
+    @include p-font;
+    font-size: small;
+    line-height: 0.5;
+  }
+
+  .p {
+    margin: 0.3em;
+    padding: 0;
+  }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}

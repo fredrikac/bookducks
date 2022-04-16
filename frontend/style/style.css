@@ -183,15 +183,34 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border: solid 1px yellow;
 }
 
-.container {
-  width: 23rem;
-  border: solid 1px magenta;
+.container.myProfile {
+  width: inherit;
+  height: auto;
+  padding: 2em 3em;
+  border-radius: 5px;
+  border: solid 2px #0c2c43;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #6ba4bc;
+  width: 100%;
 }
 
-.container .profile {
+.container.myProfile .genreP {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+  font-size: small;
+  line-height: 0.5;
+}
+
+.container.myProfile .p {
+  margin: 0.3em;
+  padding: 0;
+}
+
+.container.myProfile .myProfile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,12 +220,24 @@
           flex-direction: row;
 }
 
-.container .avatar {
-  width: 4em;
-  height: auto;
+.container.myProfile .avatar {
+  width: 6em;
+  height: 6em;
 }
 
-.container .form-wrap {
+.container {
+  width: 49%;
+}
+
+.container .bookDiv {
+  width: inherit;
+  height: auto;
+  padding: 2em 3em;
+  border-radius: 5px;
+  border: solid 2px #0c2c43;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,8 +245,57 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 15rem;
-  height: 35rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.container .bookDiv .genreP {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+  font-size: small;
+  line-height: 0.5;
+}
+
+.container .bookDiv .p {
+  margin: 0.3em;
+  padding: 0;
+}
+
+.container .bookDiv img {
+  height: auto;
+  width: 12em;
+}
+
+.container .h2-heading {
+  text-align: center;
+}
+
+.container .form-wrap {
+  width: inherit;
+  height: auto;
+  padding: 2em 3em;
+  border-radius: 5px;
+  border: solid 2px #0c2c43;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.container .form-wrap .genreP {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+  font-size: small;
+  line-height: 0.5;
+}
+
+.container .form-wrap .p {
+  margin: 0.3em;
+  padding: 0;
+}
+
+.container .form-wrap .container.audio {
+  margin-left: 1em;
 }
 
 .container .form-wrap .form {
@@ -236,6 +316,10 @@
 .container .form-wrap .form input {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #361910;
+}
+
+.container.audio {
+  margin-left: 0.9em;
 }
 
 .about {

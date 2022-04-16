@@ -25,19 +25,18 @@
 <!--profilecontainer wrappar alla divar på profilsidan-->
     <div id="profileContainer" class="">
      
-      <div class="container">
+      <div class="container myProfile">
         <h2 class="h2-heading">My profile</h2>
-        <div id="myProfile" class="profile"></div>
+        <div id="myProfile" class="myProfile"></div>
       </div>
 
-
-    <div id="myBooks" class="container"> 
-      <h2 class="h2-heading">My books</h2>
-    </div>
+      <div id="myBooks" class="container"> 
+        <h2 class="h2-heading">My books</h2>
+      </div>
     
-    <div id="myAudio" class="container"> 
-      <h2 class="h2-heading">My audiobooks</h2>
-    </div>
+      <div id="myAudio" class="container"> 
+        <h2 class="h2-heading">My audiobooks</h2>
+      </div>
 
     <!--En div för att adda vanliga böcker. Just nu en div i en div -->
 
@@ -61,7 +60,7 @@
               <option value="5">Popular science</option>
               <option value="6">Sci-fi</option>
             </select><br>
-            <label for="pages">Pages: </label><br>
+            <label for="pages">Pages: </label>
             <input type="number" id="pages"><br>    
             <label for="upload">Upload cover image</label>
             <input type="file" id="upload" class="input-field" /><br>
@@ -71,7 +70,7 @@
       </div>
 
       <!--En div för att adda vanliga böcker. Också här en div i en div-->
-      <div id="addAudiobooks" class="container"> 
+      <div id="addAudiobooks" class="container audio"> 
         <div class="form-wrap audio">
           <h2 class="h2-heading">Add audiobooks</h2>
             <form id="addAudio" class="form">
@@ -91,8 +90,8 @@
                 <option value="5">Popular science</option>
                 <option value="6">Sci-fi</option>
               </select><br>
-              <label for="length">Length: </label><br>
-              <input type="number" step="0.1" min="0" id="length">
+              <label for="length">Length: </label>
+              <input type="number" step="0.1" min="0" id="length"><br>
               <label for="audioUpload">Upload cover image</label>
               <input type="file" id="audioUpload" class="input-field" /><br>
               <button class="button" id="addAudioBtn">Add audiobook</button>

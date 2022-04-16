@@ -14,7 +14,7 @@ let toggleMyprofile = () => {
   }else{
     let loggedIn = sessionStorage.getItem('id');
     console.log('Logged in as user id:', loggedIn);
-    document.getElementById('profileContainer').classList.add('profileContainer');
+    document.getElementById('profileContainer').classList.add('profileInfo');
   }
 }
 toggleMyprofile();
@@ -84,12 +84,12 @@ let renderMyBooks = (userBooks) => {
         div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
       });
 
-      myBooks.innerHTML += `<div id="aBook" class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      myBooks.innerHTML += `<div id="aBook" class="bookDiv book"><img src="http://localhost:1337${cover.data.attributes.url}"> 
       ${div.innerHTML}
-      <p>Title: ${title}</p>
-      <p>Author: ${author}</p>
-      <p>Rating: ${rating}</p>
-      <p>Pages: ${pages}</p>  
+      <p class="p">Title: ${title}</p>
+      <p class="p">Author: ${author}</p>
+      <p class="p">Rating: ${rating}</p>
+      <p class="p">Pages: ${pages}</p>  
       </div>`
     }
   })
@@ -111,12 +111,12 @@ let renderMyAudiobooks = (userBooks) => {
         div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
       });
 
-      myAudiobooks.innerHTML += `<div id="aBook" class="bookDiv"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      myAudiobooks.innerHTML += `<div id="aBook" class="bookDiv audio"><img src="http://localhost:1337${cover.data.attributes.url}"> 
       ${div.innerHTML}
-      <p>Title: ${title}</p>
-      <p>Author: ${author}</p>
-      <p>Rating: ${rating}</p>
-      <p>Length: ${length}</p>  
+      <p class="p">Title: ${title}</p>
+      <p class="p">Author: ${author}</p>
+      <p class="p">Rating: ${rating}</p>
+      <p class="p">Length: ${length}</p>  
       </div>`
     }
   })

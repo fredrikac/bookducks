@@ -7,43 +7,58 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: solid 1px yellow;
 }
 
 
-
-
 //DIVarna som innehåller My Profile, My books och Add books
-.container {
-  //display: flex;
-  // flex-direction: row;
-  // justify-content: space-evenly;
-  .profile {
-    display: flex;
-    flex-direction: row;
+.container.myProfile {
+  @include bookdiv-style;
+  background: $lighter-blue;
+
+  .myProfile {
+    @include flex-row;
   }
+
+  width: 100%;
+
+  //byt ut den här fula ankan 
   .avatar {
-    width: 4em;
-    height: auto;
+    width: 6em;
+    height: 6em;
+  }
+}
+
+
+.container {
+  width: 49%;//för att de ska wrappa
+
+  .bookDiv {
+    @include bookdiv-style;
+    @include flex-column;
+
+    object-fit: contain;
+
+    img {
+      height: auto;
+      width: 12em;
+    }
   }
 
-  width: 23rem;//det här behöver ev ändras till annan mätenhet
-  
-  border: solid 1px magenta;
+  .h2-heading {
+    text-align: center;
+  }
 
+  //Styling formulär Add books
+  .form-wrap {
+    @include bookdiv-style;
+    width: auto;
 
-
-    //Styling formulär Add books
-    .form-wrap {
-      display: flex; 
-      flex-direction: column;
+    .container.audio {
+      margin-left: 1em;
+    }
   
-      width: 15rem;
-      height: 35rem;
-  
-      .form {
-      display: flex; 
-      flex-direction: column;
+    .form {
+      @include flex-column;
 
       label {
         @include p-font;
@@ -56,3 +71,6 @@
   }
 }
 
+.container.audio {
+  margin-left: 0.9em;//för att centrera dem. ingen bra lösning dock, ändra sen
+}
