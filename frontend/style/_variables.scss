@@ -2,16 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@300;400;500&display=swap');
 
 //Fonts
-@mixin logo-font {
+@mixin heading-font {
   font-family: 'Fredoka One', cursive;
-  color: $light-orange;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
-@mixin h2-font {
-  font-family: 'Quicksand', sans-serif;
-  color: $dark-brown;
-}
+// @mixin h2-font {
+//   font-family: 'Quicksand', sans-serif;
+//   color: $dark-brown;
+// }
 
 @mixin p-font {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -24,47 +23,64 @@
   background: linear-gradient(145deg, rgba(36,102,134,1) 0%, rgba(12,44,67,0.4770950616574755) 100%);
 }
 
+@mixin footer-gradient {
+  background: rgb(36,102,134);
+  background: linear-gradient(145deg, rgba(12,44,67,0.4770950616574755) 100%, rgba(36,102,134,1) 0%);
+}
+
 //Colors
 $lighter-blue: #6ba4bc;
 $light-blue: #4b8ba6;
-$light-blue-2: #499bb0;
-
 $medium-blue: #246686;
-
 $dark-blue: #0c2c43;
 
+$lighter-orange: #ffbeac;
 $light-orange: #f8a891;
 $medium-orange: #e26a48;
 $dark-orange: #cd5b37;
+$darker-orange: #914028;
 
 $dark-brown: #361910;
 
 //Common styling
 @mixin bookdiv-style {
-  //display: flex;
-  //flex-direction: column;
-
   width: inherit;
   height: auto;
-
   padding: 2em 3em;
   border-radius: 5px;
-  border: solid 2px $dark-blue;
+  border: solid 1px $medium-blue;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
+  background-color:  hsla(198, 71%, 74%, 0.25);
+  //background-color:  hsla(214, 37%, 35%, 0.3);//den här var nice!
 
+  
 
   .genreP {
     @include p-font;
     font-size: small;
-    line-height: 0.5;
+    color: $lighter-orange;
+    background-color: $dark-orange;
+    width: 50%;
+    padding: 0.2em;
+    border-radius: 5px;
+    text-align: center;
   }
 
   .p {
     margin: 0.3em;
     padding: 0;
   }
+}
+
+@mixin border-style {
+  border-top: solid 5px $light-blue;
+  border-right: solid 10px $light-blue;
+  border-bottom: solid 5px $light-blue;
+  border-left: solid 10px $light-blue;
+
+  border-radius: 15px;
 }
 
 @mixin flex-column {

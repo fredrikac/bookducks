@@ -1,21 +1,18 @@
 .body{
+  @include flex-column;
+  align-items: center;
   margin: 0;
   padding: 0;
-  background-color: $light-blue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: $dark-orange;
 }
 
 .header {
   @include header-gradient;
-
-  padding-top: 1em;
-  height: 7rem;
-  width:100%;
-  display: flex;
-  flex-direction: row;
+  @include flex-row;
   justify-content: space-between;
+  padding-top: 1em;
+  height: 8rem;
+  width:100%;
   border-bottom: solid 10px $medium-orange;
 
   .nav-link {
@@ -25,14 +22,13 @@
   }
 
   .img-and-name{
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     align-self: center;
     text-decoration: none;
 
     .bookDuck{
       object-fit: contain;
-      height: 5rem;
+      height: 6rem;
       width: auto;
       margin: 0rem 3rem;
     }
@@ -40,33 +36,77 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   justify-content: center;
+  align-items: center;
   width: 60%;
 }
 
+
+//Lists on start & profile
+.lists {
+  @include flex-row;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 5px;
+  background-color:  hsla(198, 71%, 74%, 0.66);
+
+  padding-bottom: 2em;
+  @include border-style;
+
+
+  .h2-heading {
+    text-align: center;
+  }
+
+  .bookContainer {
+    width: 50%;
+    border-right: solid 5px $light-blue;
+  }
+
+  .audioContainer {
+    width: 50%;
+    border-left: solid 5px $light-blue;
+  }
+
+  .bookDiv {
+    @include flex-column;
+    @include bookdiv-style;
+  }
+}
+
 .footer {
-  @include header-gradient;
+  @include footer-gradient;
   height: 12em;
   width: 100%;
   margin-top: 3em;
 
+  h2 {
+    margin-left: 1.5em;
+    font-size: x-large;
+  }
+
   .footer-text {
-   margin-left: 2em;
-   margin-top: 2em;
+    width: 15em;
+    font-size: small;
+
+    margin-left: 3em;
+
    .p {
-     color: $dark-brown;
+     color: $lighter-orange;
    }
   }
 }
 
 .h1-bookducks {
-  @include logo-font;
+  @include heading-font;
+  color: $light-orange;
+  font-size: 250%;
 }
 
 .h2-heading {
-  @include h2-font;
+  @include heading-font;
+  color: $dark-blue;
 }
 
 .p {
@@ -76,6 +116,16 @@
 .message {
   @include p-font;
   font-size: small;
+}
+
+.genreLabel {
+  @include heading-font;
+  color: $lighter-orange;
+  background-color: $dark-orange;
+  width: 50%;
+  padding-left: 0.5em;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
 }
 
 .button {

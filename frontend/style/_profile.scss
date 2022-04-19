@@ -1,76 +1,61 @@
-//PROFILE
 
-//Wrappar alla divar
-.profileInfo{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-
-//DIVarna som innehåller My Profile, My books och Add books
-.container.myProfile {
-  @include bookdiv-style;
-  background: $lighter-blue;
-
-  .myProfile {
-    @include flex-row;
-  }
-
-  width: 100%;
-
-  //byt ut den här fula ankan 
-  .avatar {
-    width: 6em;
-    height: 6em;
-  }
-}
-
-
-.container {
-  width: 49%;//för att de ska wrappa
-
-  .bookDiv {
-    @include bookdiv-style;
-    @include flex-column;
-
-    object-fit: contain;
-
-    img {
-      height: auto;
-      width: 12em;
-    }
-  }
+.myProfileContainer {
+  @include border-style;
+  background-color:  hsla(198, 71%, 74%, 0.75);
+  padding: 1em 3em;
+  margin: 2em 0em;
+  width: inherit;
 
   .h2-heading {
     text-align: center;
   }
+  
+  .myProfile {
+    @include flex-row;
 
-  //Styling formulär Add books
-  .form-wrap {
-    @include bookdiv-style;
-    width: auto;
-
-    .container.audio {
-      margin-left: 1em;
+    ul {
+      list-style-type: none;
+      line-height: 150%;
+      margin: 0;
     }
-  
-    .form {
-      @include flex-column;
 
-      label {
-        @include p-font;
-      }
-  
-      input {
-       @include p-font;
-      }
+    .avatar {
+      width: auto;
+      height: 8em;
     }
   }
 }
 
-.container.audio {
-  margin-left: 0.9em;//för att centrera dem. ingen bra lösning dock, ändra sen
+
+.addfunctionwrapper {
+  @include flex-row;
+  align-items: space-between;
+  width: 100%;
+
+  .form-wrap {
+    @include bookdiv-style;
+    @include border-style;
+
+    background-color:  hsla(198, 71%, 74%, 0.7);
+    .form {
+      @include flex-column;
+    
+      label {
+        @include p-font;
+      }
+      
+      input {
+        @include p-font;
+      }
+    } 
+  }
+
+  .form-wrap.audio {
+    margin-left: 1em;
+  }
+
+  .form-wrap.book {
+    margin-right: 1em;
+  }
 }
+

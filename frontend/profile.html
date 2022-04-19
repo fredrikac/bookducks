@@ -21,27 +21,26 @@
     <button id="signOutBtn" class="button sign-out">Sign out</button>
   </nav>
   </header>
-  <main class="main">
-<!--profilecontainer wrappar alla divar på profilsidan-->
-    <div id="profileContainer" class="">
+  <main id="profileContainer" class="main profileInfo">
      
-      <div class="container myProfile">
+      <div class="myProfileContainer">
         <h2 class="h2-heading">My profile</h2>
         <div id="myProfile" class="myProfile"></div>
       </div>
 
-      <div id="myBooks" class="container"> 
-        <h2 class="h2-heading">My books</h2>
-      </div>
+
+      <div class="lists">
+        <div id="myBooks" class="bookContainer"> 
+          <h2 class="h2-heading">My books</h2>
+        </div>
     
-      <div id="myAudio" class="container"> 
-        <h2 class="h2-heading">My audiobooks</h2>
-      </div>
+        <div id="myAudio" class="audioContainer"> 
+          <h2 class="h2-heading">My audiobooks</h2>
+        </div>
+    </div>
 
-    <!--En div för att adda vanliga böcker. Just nu en div i en div -->
-
-    <div id="addBooks" class="container"> 
-      <div class="form-wrap">
+    <div id="addBooks" class="addfunctionwrapper container"> 
+      <div class="form-wrap book">
         <h2 class="h2-heading">Add books</h2>
           <form id="addBook" class="form">
             <label for="title">Title</label>
@@ -69,10 +68,7 @@
             <button class="button" id="addBookBtn">Add book</button>
             </form>
         </div>
-      </div>
-
-      <!--En div för att adda vanliga böcker. Också här en div i en div-->
-      <div id="addAudiobooks" class="container audio"> 
+    
         <div class="form-wrap audio">
           <h2 class="h2-heading">Add audiobooks</h2>
             <form id="addAudio" class="form">
@@ -100,12 +96,18 @@
               <input type="file" id="audioUpload" required /><br>
               <button class="button" id="addAudioBtn">Add audiobook</button>
             </form>
-        </div>
-      </div> 
+     </div>
 
-  </div>
   </main>
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <h2 class="h1-bookducks">BookDucks Inc 2022</h2>
+    <div class="footer-text">
+      <p class="p">This is a school assignment.<br>
+      I borrowed the colors & avatar from Lunarstorm.<br>
+      <br>
+      Yes, I'm that old. </p>
+    </div>
+  </footer>
   <script src="main.js"></script>
   <script src="profile.js"></script>
 

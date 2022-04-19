@@ -1,85 +1,21 @@
-  //startpage
 .about {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
   justify-content: center;
   margin: 2em 0em;
   padding: 1em 3em;
-  background: $lighter-blue;
-  border-radius: 5px;
-}
 
-.how-it-works {
-  border-top: solid 5px hsla(198, 71%, 74%, 0.637);
-  border-bottom: solid 5px hsla(198, 71%, 74%, 0.637);
-  border-radius: 0;
-}
-  
-.lists {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  border-radius: 5px;
-  background: $lighter-blue;
-
-
-  .h2-heading {
-    text-align: center;
-  }
-
-  .bookContainer {
-    width: 50%;
-    border-right: solid 2px $light-blue;
-    border-radius: 5px;
-    
-  }
-
-  .audioContainer {
-    width: 50%;
-    border-left: solid 2px $light-blue;
-    border-radius: 5px;
-  }
-
-  .bookDiv {
-    display: flex;
-    flex-direction: column;
-
-    width: inherit;
-    height: auto;
-
-    padding: 2em 3em;
-    border-radius: 5px;
-    border: solid 2px $dark-blue;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-  
-  
+  background-color:  hsla(198, 71%, 74%, 0.66);
  
-    img {
-      height: 18em;
-      width: auto;
-    }
 
-    .genreP {
-      @include p-font;
-      font-size: small;
-      line-height: 0.5;
-    }
+  @include border-style;
 
-    .p {
-      margin: 0.3em;
-      padding: 0;
-    }
-  }
-
-  .bookDiv.audio {
-    background-color:  rgba(12, 44, 67, 0.196)
-  }
-
-  .bookDiv.book {
-    background-color:  hsla(198, 71%, 74%, 0.237);
+  .how-it-works {
+    border-top: solid 5px $light-blue;
+    border-bottom: solid 5px $light-blue;
+    background-color:  hsla(198, 71%, 74%, 0.3);
   }
 }
+
+  
+

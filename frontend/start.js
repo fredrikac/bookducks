@@ -27,10 +27,11 @@ let renderBooks = async (books) => {
     let div = document.createElement('div');
 
     genres.data.forEach(genre => {
-      div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+      div.innerHTML += `<p class="genreP"> ${genre.attributes.genre} </p>`  
     });
 
-    bookList.innerHTML += `<div class="bookDiv book"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+    bookList.innerHTML += `<div class="bookDiv book">
+    <img src="http://localhost:1337${cover.data.attributes.url}"> 
       ${div.innerHTML}<br>
     <p class="p">Title: ${title}</p>
     <p class="p">Author: ${author}</p>
@@ -53,10 +54,12 @@ let renderAudiobooks = async (audiobooks) => {
 
     genres.data.forEach(genre => { 
       div.classList.add('genreDiv');
-      div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+      div.innerHTML += `<p class="genreP"> ${genre.attributes.genre} </p>`  
     })
 
-    audioList.innerHTML += `<div class="bookDiv audio"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+    audioList.innerHTML += `<div class="bookDiv audio">
+    <span class="genreLabel">audio</span>
+    <img src="http://localhost:1337${cover.data.attributes.url}"> 
     ${div.innerHTML}<br>
     <p class="p">Title: ${title}</p>
     <p class="p">Author: ${author}</p>

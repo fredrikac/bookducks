@@ -1,22 +1,20 @@
 //LOGIN/REGISTER
 .forms-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  max-width: inherit;
-  margin-top: 1em;
+  @include flex-row;
+  align-items: space-between;
+  
+
+  background-color:  hsla(198, 71%, 74%, 0.66);
+  @include border-style;
+  margin: 2em 0em;
+  padding: 1em 3em;
 
   .form-wrap {
-    display: flex; 
-    flex-direction: column;
-
-    width: 15rem;
-    height: 20rem;
+    @include flex-column;
+    width: 50%;
 
     .form {
-      display: flex; 
-      flex-direction: column;
-      margin: 0em 1em;
+      @include flex-column;
 
       label {
         @include p-font;
@@ -26,5 +24,13 @@
         @include p-font;
       }
     }
+  }
+
+  .form-wrap.login {
+    margin-right: 3em;
+  }
+
+  .form-wrap.register {
+    margin-left: 3em;
   }
 }

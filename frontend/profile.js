@@ -5,8 +5,8 @@ let myAudiobooks = document.querySelector('#myAudio');
 
 let currentUserID = sessionStorage.getItem('id');
 
-
-// //Check if logged in - if not, hide profile side
+//Behövs ens denna????? gör samma sak som funktionen i main.js
+//Check if logged in - if not, hide profile side
 let toggleMyprofile = () => {
   if(!sessionStorage.getItem('token')){
     console.log('you are not logged in')
@@ -35,7 +35,7 @@ getUserInfo(currentUserID);
 //Render userinfo to the UI
 let renderProfile = (userInfo) => {
   profileDiv.innerHTML = `
-  <img src="./images/avatar.png" alt="duck" class="avatar">
+  <img src="./images/lunar12.png" alt="lunarstorm avatar" class="avatar">
   <ul>
   <li class="p">Username: ${userInfo.username}</li>
   <li class="p">Email: ${userInfo.email}</li>
@@ -81,10 +81,11 @@ let renderMyBooks = (userBooks) => {
       let div = document.createElement('div');
 
       genres.data.forEach(genre => {
-        div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+        div.innerHTML += `<p class="genreP"> ${genre.attributes.genre} </p>`  
       });
 
-      myBooks.innerHTML += `<div id="aBook" class="bookDiv book"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      myBooks.innerHTML += `<div id="aBook" class="bookDiv book">
+      <img src="http://localhost:1337${cover.data.attributes.url}"> 
       ${div.innerHTML}
       <p class="p">Title: ${title}</p>
       <p class="p">Author: ${author}</p>
@@ -108,10 +109,12 @@ let renderMyAudiobooks = (userBooks) => {
       let div = document.createElement('div');
 
       genres.data.forEach(genre => {
-        div.innerHTML += `<p class="genreP">| ${genre.attributes.genre} </p>`  
+        div.innerHTML += `<p class="genreP"> ${genre.attributes.genre} </p>`  
       });
 
-      myAudiobooks.innerHTML += `<div id="aBook" class="bookDiv audio"><img src="http://localhost:1337${cover.data.attributes.url}"> 
+      myAudiobooks.innerHTML += `<div id="aBook" class="bookDiv audio">
+      <span class="genreLabel">audio</span>
+      <img src="http://localhost:1337${cover.data.attributes.url}"> 
       ${div.innerHTML}
       <p class="p">Title: ${title}</p>
       <p class="p">Author: ${author}</p>
