@@ -130,7 +130,13 @@ let addBook = async () => {
   let author = document.querySelector('#author').value;
   let rating = document.querySelector('#rating').value;
   let pages = document.querySelector('#pages').value;
-  let genres = document.querySelector('#selectGenre').value;
+  let genres = [];
+  for (let option of document.getElementById('selectGenre').options)
+  {
+      if (option.selected) {
+          genres.push(option.value);
+      }
+  }
 
   let cover = document.querySelector('#upload').files;
   let imgData = new FormData();
@@ -148,7 +154,7 @@ let addBook = async () => {
         author,
         rating,
         pages,
-        genres: [genres], 
+        genres, 
         user: [currentUserID],
         cover: response.data[0].id
       }
@@ -170,7 +176,13 @@ let addAudiobook = async () => {
   let audioAuthor = document.querySelector('#audioAuthor').value;
   let audioRating = document.querySelector('#audioRating').value;
   let length = document.querySelector('#length').value;
-  let audioGenres = document.querySelector('#selectAudioGenre').value;
+  let audioGenres = [];
+  for (let option of document.getElementById('selectAudioGenre').options)
+  {
+      if (option.selected) {
+          audioGenres.push(option.value);
+      }
+  }
 
   let audioCover = document.querySelector('#audioUpload').files;
 
@@ -190,7 +202,7 @@ let addAudiobook = async () => {
         author : audioAuthor,
         rating : audioRating,
         length,
-        genres: [audioGenres], 
+        genres: audioGenres, 
         user: [currentUserID],
         cover: response.data[0].id
       }

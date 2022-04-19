@@ -29,9 +29,9 @@
       <h2 class="h2-heading">Sign in</h2>
       <form id="loginForm" class="form">
         <label for="username">Username</label>
-        <input type="name" id="username" required class="input-field" /><br>
+        <input type="name" id="username" required/><br>
         <label for="password">Password</label>
-        <input type="password" id="password" required class="input-field" />
+        <input type="password" id="password" required/>
         <button class="button" id="loginBtn">Sign in</button>
         </form>
     </div>
@@ -39,17 +39,17 @@
       <h2 class="h2-heading">Register new user</h2>
         <form id="createUser" class="form">
           <label for="newUser">Username</label>
-          <input type="text" id="newUser" required class="input-field" /><br>
+          <input type="text" id="newUser" required /><br>
           <label for="userEmail">Email</label>
-          <input type="email" id="userEmail" required class="input-field" /><br>
+          <input type="email" id="userEmail" required /><br>
           <label for="userPass">Password</label>
-          <input type="password" id="userPass" required class="input-field" />
+          <input type="password" id="userPass" minlength="8" required />
           <button class="button" id="createBtn">Create account</button>
           </form>
     </div>
   </div>
   </main>
-  <footer></footer>
+  <footer class="footer"></footer>
   <script src="main.js"></script>
   <script src="login.js"></script>
 

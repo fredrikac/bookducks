@@ -76,6 +76,23 @@
   width: 60%;
 }
 
+.footer {
+  background: #246686;
+  background: linear-gradient(145deg, #246686 0%, rgba(12, 44, 67, 0.477095) 100%);
+  height: 12em;
+  width: 100%;
+  margin-top: 3em;
+}
+
+.footer .footer-text {
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.footer .footer-text .p {
+  color: #361910;
+}
+
 .h1-bookducks {
   font-family: 'Fredoka One', cursive;
   color: #f8a891;
@@ -90,6 +107,12 @@
 .p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #361910;
+}
+
+.message {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #361910;
+  font-size: small;
 }
 
 .button {
@@ -345,6 +368,7 @@
 .how-it-works {
   border-top: solid 5px rgba(142, 208, 236, 0.637);
   border-bottom: solid 5px rgba(142, 208, 236, 0.637);
+  border-radius: 0;
 }
 
 .lists {

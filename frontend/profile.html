@@ -45,25 +45,27 @@
         <h2 class="h2-heading">Add books</h2>
           <form id="addBook" class="form">
             <label for="title">Title</label>
-            <input type="text" id="title" required class="input-field" /><br>
+            <input type="text" id="title" required /><br>
             <label for="author">Author</label>
-            <input type="text" id="author" required class="input-field" /><br>
-            <label for="rating">Rating</label>
-            <input type="number" step="0.1" min="0" max="5" id="rating"><br>
+            <input type="text" id="author" required /><br>
+            <label for="rating">Rating 0-5.0</label>
+            <input type="number" step="0.1" min="0" max="5" id="rating" required><br>
             <label for="selectGenre">Genre</label>
-            <select id="selectGenre">
-              <option value="" selected disabled>Choose a genre...</option>
+            <select id="selectGenre" multiple required>
+              <option value="" selected disabled>Choose genres...</option>
+              <option value="7">Biography</option>
               <option value="2">Classics</option>
               <option value="3">Fantasy</option>
               <option value="4">Fiction</option>
               <option value="1">Horror</option>
               <option value="5">Popular science</option>
               <option value="6">Sci-fi</option>
-            </select><br>
+            </select>
+            <span class="message">Hold down ctrl and click to choose multiple options</span><br>
             <label for="pages">Pages: </label>
-            <input type="number" id="pages"><br>    
+            <input type="number" id="pages" required><br>    
             <label for="upload">Upload cover image</label>
-            <input type="file" id="upload" class="input-field" /><br>
+            <input type="file" id="upload" required /><br>
             <button class="button" id="addBookBtn">Add book</button>
             </form>
         </div>
@@ -75,25 +77,27 @@
           <h2 class="h2-heading">Add audiobooks</h2>
             <form id="addAudio" class="form">
               <label for="audioTitle">Title</label>
-              <input type="text" id="audioTitle" required class="input-field" /><br>
+              <input type="text" id="audioTitle" required /><br>
               <label for="audioAuthor">Author</label>
-              <input type="text" id="audioAuthor" required class="input-field" /><br>
-              <label for="audioRating">Rating</label>
-              <input type="number" step="0.1" min="0" max="5" id="audioRating"><br>
+              <input type="text" id="audioAuthor" required /><br>
+              <label for="audioRating">Rating 0-5.0</label>
+              <input type="number" step="0.1" min="0" max="5" id="audioRating" required><br>
               <label for="selectAudioGenre">Genre</label>
-              <select id="selectAudioGenre">
-                <option value="" selected disabled>Choose a genre...</option>
+              <select id="selectAudioGenre" multiple required>
+                <option value="" selected disabled>Choose genres...</option>
+                <option value="7">Biography</option>
                 <option value="2">Classics</option>
                 <option value="3">Fantasy</option>
                 <option value="4">Fiction</option>
                 <option value="1">Horror</option>
                 <option value="5">Popular science</option>
                 <option value="6">Sci-fi</option>
-              </select><br>
+              </select>
+              <span class="message">Hold down ctrl and click to choose multiple options</span><br>
               <label for="length">Length: </label>
-              <input type="number" step="0.1" min="0" id="length"><br>
+              <input type="number" step="0.1" min="0" id="length" required placeholder="00h.00m"><br>
               <label for="audioUpload">Upload cover image</label>
-              <input type="file" id="audioUpload" class="input-field" /><br>
+              <input type="file" id="audioUpload" required /><br>
               <button class="button" id="addAudioBtn">Add audiobook</button>
             </form>
         </div>
@@ -101,7 +105,7 @@
 
   </div>
   </main>
-  <footer></footer>
+  <footer class="footer"></footer>
   <script src="main.js"></script>
   <script src="profile.js"></script>
 

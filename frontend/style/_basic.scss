@@ -44,7 +44,21 @@
   flex-direction: column;
   justify-content: center;
   width: 60%;
- 
+}
+
+.footer {
+  @include header-gradient;
+  height: 12em;
+  width: 100%;
+  margin-top: 3em;
+
+  .footer-text {
+   margin-left: 2em;
+   margin-top: 2em;
+   .p {
+     color: $dark-brown;
+   }
+  }
 }
 
 .h1-bookducks {
@@ -57,6 +71,11 @@
 
 .p {
   @include p-font;
+}
+
+.message {
+  @include p-font;
+  font-size: small;
 }
 
 .button {
