@@ -1,7 +1,7 @@
 
 .myProfileContainer {
   @include border-style;
-  background-color:  hsla(198, 71%, 74%, 0.75);
+  background-color:  $bottom-bg-color;
   padding: 1em 3em;
   margin: 2em 0em;
   width: inherit;
@@ -36,7 +36,7 @@
     @include bookdiv-style;
     @include border-style;
 
-    background-color:  hsla(198, 71%, 74%, 0.7);
+    background-color:  $bottom-bg-color;
     .form {
       @include flex-column;
     

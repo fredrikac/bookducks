@@ -5,15 +5,14 @@
   margin: 2em 0em;
   padding: 1em 3em;
 
-  background-color:  hsla(198, 71%, 74%, 0.66);
+  background-color:  $bottom-bg-color;
  
 
   @include border-style;
 
   .how-it-works {
-    border-top: solid 5px $light-blue;
-    border-bottom: solid 5px $light-blue;
-    background-color:  hsla(198, 71%, 74%, 0.3);
+    @include border-style;
+    background-color:  $overlay-bg-color;
   }
 }
 

@@ -2,6 +2,11 @@
 const bookList = document.querySelector('#bookList');
 const audioList = document.querySelector('#audioList');
 
+document.getElementById('becomeBtn').addEventListener('click', (e)=> {
+  e.preventDefault();
+  location.href = './login.html';
+})
+
 //GET books & audiobooks
 let getBooks = async () => {
   let {data} = await axios.get("http://localhost:1337/api/books?populate=*");

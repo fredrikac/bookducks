@@ -36,7 +36,7 @@
 
 .header .nav-link {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
   color: #f8a891;
   padding: 1em;
 }
@@ -94,10 +94,10 @@
   border-radius: 5px;
   background-color: rgba(142, 208, 236, 0.66);
   padding-bottom: 2em;
-  border-top: solid 5px #4b8ba6;
-  border-right: solid 10px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  border-left: solid 10px #4b8ba6;
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
   border-radius: 15px;
 }
 
@@ -107,12 +107,12 @@
 
 .lists .bookContainer {
   width: 50%;
-  border-right: solid 5px #4b8ba6;
+  border-right: solid 5px #246686;
 }
 
 .lists .audioContainer {
   width: 50%;
-  border-left: solid 5px #4b8ba6;
+  border-left: solid 5px #246686;
 }
 
 .lists .bookDiv {
@@ -131,12 +131,12 @@
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(142, 208, 236, 0.25);
+  background-color: rgba(142, 208, 236, 0.1);
 }
 
 .lists .bookDiv .genreP {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
   font-size: small;
   color: #ffbeac;
   background-color: #cd5b37;
@@ -189,12 +189,12 @@
 
 .p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
 }
 
 .message {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
   font-size: small;
 }
 
@@ -213,7 +213,7 @@
   background-color: #e26a48;
   color: #0c2c43;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
   padding: 1em;
   margin-top: 1em;
   font-size: medium;
@@ -252,10 +252,10 @@
       -ms-flex-align: space-between;
           align-items: space-between;
   background-color: rgba(142, 208, 236, 0.66);
-  border-top: solid 5px #4b8ba6;
-  border-right: solid 10px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  border-left: solid 10px #4b8ba6;
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
   border-radius: 15px;
   margin: 2em 0em;
   padding: 1em 3em;
@@ -284,12 +284,12 @@
 
 .forms-container .form-wrap .form label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
 }
 
 .forms-container .form-wrap .form input {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
 }
 
 .forms-container .form-wrap.login {
@@ -301,12 +301,12 @@
 }
 
 .myProfileContainer {
-  border-top: solid 5px #4b8ba6;
-  border-right: solid 10px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  border-left: solid 10px #4b8ba6;
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
   border-radius: 15px;
-  background-color: rgba(142, 208, 236, 0.75);
+  background-color: rgba(142, 208, 236, 0.66);
   padding: 1em 3em;
   margin: 2em 0em;
   width: inherit;
@@ -360,18 +360,18 @@
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(142, 208, 236, 0.25);
-  border-top: solid 5px #4b8ba6;
-  border-right: solid 10px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  border-left: solid 10px #4b8ba6;
+  background-color: rgba(142, 208, 236, 0.1);
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
   border-radius: 15px;
-  background-color: rgba(142, 208, 236, 0.7);
+  background-color: rgba(142, 208, 236, 0.66);
 }
 
 .addfunctionwrapper .form-wrap .genreP {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
   font-size: small;
   color: #ffbeac;
   background-color: #cd5b37;
@@ -398,12 +398,12 @@
 
 .addfunctionwrapper .form-wrap .form label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
 }
 
 .addfunctionwrapper .form-wrap .form input {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #361910;
+  color: #0c2c43;
 }
 
 .addfunctionwrapper .form-wrap.audio {
@@ -431,16 +431,19 @@
   margin: 2em 0em;
   padding: 1em 3em;
   background-color: rgba(142, 208, 236, 0.66);
-  border-top: solid 5px #4b8ba6;
-  border-right: solid 10px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  border-left: solid 10px #4b8ba6;
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
   border-radius: 15px;
 }
 
 .about .how-it-works {
-  border-top: solid 5px #4b8ba6;
-  border-bottom: solid 5px #4b8ba6;
-  background-color: rgba(142, 208, 236, 0.3);
+  border-top: solid 5px #246686;
+  border-right: solid 10px #246686;
+  border-bottom: solid 5px #246686;
+  border-left: solid 10px #246686;
+  border-radius: 15px;
+  background-color: rgba(142, 208, 236, 0.1);
 }
 /*# sourceMappingURL=style.css.map */

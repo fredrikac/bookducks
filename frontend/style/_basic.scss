@@ -49,7 +49,8 @@
   justify-content: space-between;
   width: 100%;
   border-radius: 5px;
-  background-color:  hsla(198, 71%, 74%, 0.66);
+  background-color: $bottom-bg-color;
+  //background-color: $medium-blue;
 
   padding-bottom: 2em;
   @include border-style;
@@ -61,12 +62,12 @@
 
   .bookContainer {
     width: 50%;
-    border-right: solid 5px $light-blue;
+    border-right: solid 5px $medium-blue;
   }
 
   .audioContainer {
     width: 50%;
-    border-left: solid 5px $light-blue;
+    border-left: solid 5px $medium-blue;
   }
 
   .bookDiv {

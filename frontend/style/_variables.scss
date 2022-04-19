@@ -7,14 +7,9 @@
   letter-spacing: 3px;
 }
 
-// @mixin h2-font {
-//   font-family: 'Quicksand', sans-serif;
-//   color: $dark-brown;
-// }
-
 @mixin p-font {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: $dark-brown;
+  color: $dark-blue;
 }
 
 //Colors
@@ -40,7 +35,9 @@ $medium-orange: #e26a48;
 $dark-orange: #cd5b37;
 $darker-orange: #914028;
 
-$dark-brown: #361910;
+$bottom-bg-color: hsla(198, 71%, 74%, 0.66);
+
+$overlay-bg-color: hsla(198, 71%, 74%, 0.1);
 
 //Common styling
 @mixin bookdiv-style {
@@ -52,10 +49,7 @@ $dark-brown: #361910;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  background-color:  hsla(198, 71%, 74%, 0.25);
-  //background-color:  hsla(214, 37%, 35%, 0.3);//den här var nice!
-
-  
+  background-color:  $overlay-bg-color;
 
   .genreP {
     @include p-font;
@@ -75,10 +69,10 @@ $dark-brown: #361910;
 }
 
 @mixin border-style {
-  border-top: solid 5px $light-blue;
-  border-right: solid 10px $light-blue;
-  border-bottom: solid 5px $light-blue;
-  border-left: solid 10px $light-blue;
+  border-top: solid 5px $medium-blue;
+  border-right: solid 10px $medium-blue;
+  border-bottom: solid 5px $medium-blue;
+  border-left: solid 10px $medium-blue;
 
   border-radius: 15px;
 }

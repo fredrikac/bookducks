@@ -1,10 +1,8 @@
-//LOGIN/REGISTER
 .forms-container {
   @include flex-row;
   align-items: space-between;
-  
+  background-color:  $bottom-bg-color;
 
-  background-color:  hsla(198, 71%, 74%, 0.66);
   @include border-style;
   margin: 2em 0em;
   padding: 1em 3em;
