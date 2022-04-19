@@ -11,7 +11,6 @@ document.querySelector('#signOutBtn').addEventListener('click', (e) => {
 let toggleSignIn = () => {
   if(sessionStorage.getItem('token')){
     document.getElementById('loginLink').classList.add('hidden');
-    document.getElementById('becomeBtn').classList.add('hidden');
   }else{
     document.getElementById('profileLink').classList.add('hidden');
     document.getElementById('signOutBtn').classList.add('hidden');

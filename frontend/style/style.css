@@ -337,6 +337,10 @@
   height: 8em;
 }
 
+.button.delete {
+  padding: 0.5em;
+}
+
 .addfunctionwrapper {
   display: -webkit-box;
   display: -ms-flexbox;

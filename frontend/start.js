@@ -7,6 +7,14 @@ document.getElementById('becomeBtn').addEventListener('click', (e)=> {
   location.href = './login.html';
 })
 
+let loggedIn = ()=>{
+  
+   if(sessionStorage.getItem('token')){
+     document.getElementById('becomeBtn').classList.add('hidden');//flytta denna till start
+  }
+}
+loggedIn();
+
 //GET books & audiobooks
 let getBooks = async () => {
   let {data} = await axios.get("http://localhost:1337/api/books?populate=*");

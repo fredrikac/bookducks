@@ -2,22 +2,7 @@
 let profileDiv = document.querySelector('#myProfile');
 let myBooks = document.querySelector('#myBooks');
 let myAudiobooks = document.querySelector('#myAudio');
-
 let currentUserID = sessionStorage.getItem('id');
-
-//Behövs ens denna????? gör samma sak som funktionen i main.js
-//Check if logged in - if not, hide profile side
-let toggleMyprofile = () => {
-  if(!sessionStorage.getItem('token')){
-    console.log('you are not logged in')
-    document.getElementById('profileContainer').classList.add('hidden');
-  }else{
-    let loggedIn = sessionStorage.getItem('id');
-    console.log('Logged in as user id:', loggedIn);
-    document.getElementById('profileContainer').classList.add('profileInfo');
-  }
-}
-toggleMyprofile();
 
 
 //Get userinfo 
@@ -90,7 +75,8 @@ let renderMyBooks = (userBooks) => {
       <p class="p">Title: ${title}</p>
       <p class="p">Author: ${author}</p>
       <p class="p">Rating: ${rating}</p>
-      <p class="p">Pages: ${pages}</p>  
+      <p class="p">Pages: ${pages}</p>
+      <button class="button delete" onclick="deleteBook(${book.id})">Delete</button>  
       </div>`
     }
   })
@@ -103,9 +89,9 @@ let renderMyAudiobooks = (userBooks) => {
 
     let { title, author, length, rating, user, genres, cover } = book.attributes;
 
-    let bookId = user.data.id;
+    let audiobookId = user.data.id;
 
-    if(bookId == currentUserID){
+    if(audiobookId == currentUserID){
       let div = document.createElement('div');
 
       genres.data.forEach(genre => {
@@ -120,11 +106,44 @@ let renderMyAudiobooks = (userBooks) => {
       <p class="p">Author: ${author}</p>
       <p class="p">Rating: ${rating}</p>
       <p class="p">Length: ${length}</p>  
+      <button class="button delete" onclick="deleteAudio(${book.id})">Delete</button>
       </div>`
     }
   })
 }
 
+
+//Delete audiobook
+let deleteAudio = async (id) => {
+  if(confirm('Are you sure you want to delete this audiobook?')){
+      await axios.delete(`http://localhost:1337/api/audiobooks/${id}`, {
+      headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`
+      }
+  }).then(response => {
+    console.log('Deleted!')
+    location.reload();
+  }).catch(error => {
+    console.log('Oh no! An error occurred:', error.response);
+  });
+  }
+}
+
+//Delete book
+let deleteBook = async (id) => {
+  if(confirm('Are you sure you want to delete this book?')){
+    await axios.delete(`http://localhost:1337/api/books/${id}`, {
+      headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`
+      }
+  }).then(response => {
+    console.log('Deleted!')
+    location.reload();
+  }).catch(error => {
+    console.log('Oh no! An error occurred:', error.response);
+  });
+  }
+}
 
 //UPLOAD NEW BOOKS
 //Upload BOOK
@@ -180,6 +199,7 @@ let addAudiobook = async () => {
   let audioRating = document.querySelector('#audioRating').value;
   let length = document.querySelector('#length').value;
   let audioGenres = [];
+
   for (let option of document.getElementById('selectAudioGenre').options)
   {
       if (option.selected) {
@@ -205,7 +225,7 @@ let addAudiobook = async () => {
         author : audioAuthor,
         rating : audioRating,
         length,
-        genres: audioGenres, 
+        genres: audioGenres,
         user: [currentUserID],
         cover: response.data[0].id
       }
