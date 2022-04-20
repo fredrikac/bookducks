@@ -6,15 +6,15 @@ let currentUserID = sessionStorage.getItem('id');
 
 
 //Get userinfo 
-let getUserInfo = async (id) => {
-  let {data} = await axios.get(`http://localhost:1337/api/users/${id}`, {
+let getUserInfo = async () => {
+  let {data} = await axios.get(`http://localhost:1337/api/users/me`, {
     headers: {
         Authorization: `Bearer ${sessionStorage.getItem("token")}`
     }
   });
   renderProfile(data);
 }
-getUserInfo(currentUserID);
+getUserInfo();
 
 
 //Render userinfo to the UI
